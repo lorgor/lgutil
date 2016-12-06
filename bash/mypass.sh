@@ -15,3 +15,10 @@ function mypass() {
         /usr/bin/xsel -b -c
     ) 2>/dev/null & disown
 }
+
+# 161205 Quick & dirty fn to call yubioath
+
+function yubi() {
+    killall gpg-agent
+    /usr/local/bin/yubioath gui
+}
