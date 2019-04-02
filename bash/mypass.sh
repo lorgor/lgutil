@@ -22,3 +22,11 @@ function yubi() {
     killall gpg-agent
     /usr/local/bin/yubioath gui
 }
+
+# 190401 Quick & dirty fn to set 4K mode for Samsung U28E590 4K monitor
+
+function set4k() {
+    xrandr --newmode "3840x2160" 553.01 3840 3890 3940 3990  2160 2210 2260 2310 -hsync +vsync && \
+    xrandr --addmode Virtual1 3840x2160 && \
+    xrandr --output Virtual1 --mode 3840x2160 | xrandr -s 2560x1600
+}
